@@ -1,3 +1,8 @@
+from turn import player_positie
+from tkinter import Button
+from tkinter import Label
+
+
 # board locaties aanmaken
 posities = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
