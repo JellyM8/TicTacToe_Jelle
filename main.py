@@ -3,7 +3,7 @@ from tkinter import *
 from char_select import *
 from gamestate import *
 from screen import *
-from turn_cycle_board import *
+from turn_board import *
 root = Tk()
 
 # bovenstaande werkte niet dus probeerde daarna alle aangemaakte functies op te roepen
