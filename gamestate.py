@@ -1,3 +1,6 @@
+from tkinter import Tk
+from tkinter import Label
+root = Tk()
 # een check om te kijken of er iemand heeft gewonnen, deze check wordt elke beurt op nieuw gedaan (zie turn)
 
 def Check_game_over(pos):
