@@ -6,6 +6,8 @@ from gamestate import Check_game_over
 from board import posities
 from random import randint
 from turn import player_positie
+
+# ik moet dit van bestand een class gaan maken
 # variabelen aanmaken zodat we een turn cycle kunnen maken
 root = Tk()
 turn = 1
