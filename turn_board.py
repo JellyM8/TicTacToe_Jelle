@@ -3,15 +3,13 @@ from tkinter import Label
 from tkinter import Tk
 from char_select import player_char, ai_char
 from gamestate import Check_game_over
+from board import posities
 from random import randint
-root = Tk()
 # variabelen aanmaken zodat we een turn cycle kunnen maken
-
+root = Tk()
+turn = 1
+turns = 0
 class Turn_board:
-    
-    turn = 1
-    turns = 0
-
     def player_positie(positie):
         global turn
         global turns
