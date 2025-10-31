@@ -1,5 +1,12 @@
+from tkinter import Button
+from tkinter import Label
+from tkinter import Tk
+from char_select import player_char, ai_char
+from gamestate import Check_game_over
+from board import posities
+from random import randint
 # variabelen aanmaken zodat we een turn cycle kunnen maken
-print("hit")
+root = Tk()
 turn = 1
 turns = 0
 
