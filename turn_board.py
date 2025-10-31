@@ -3,13 +3,12 @@ from tkinter import Label
 from tkinter import Tk
 from char_select import player_char, ai_char
 from gamestate import Check_game_over
-from board import posities
 from random import randint
 root = Tk()
 # variabelen aanmaken zodat we een turn cycle kunnen maken
 
 class Turn_board:
-
+    
     turn = 1
     turns = 0
 
@@ -40,7 +39,7 @@ class Turn_board:
                 turn = 0
                 turns += 1
                 print(posities)
-                Ai_turn()
+                Turn_board.Ai_turn()
     # functie om ai turn aan te maken
     def Ai_turn():
         global turn
@@ -117,15 +116,15 @@ class Turn_board:
     #  we moeten lambda gebruiken want als we variabelen door player posititie halen accepteert die het niet, 
     # lambda zorgt ervoor dat het geaccepteert wordt en dat we niet elke keer een nieuwe functie hoeven aan te maken voor elke button
     # sticky zorgt ervoor dat de buttons mee scalen met de groote van het scherm
-        button1 = Button(text=posities[0], command=lambda: player_positie(0)).grid(row=5, column=0, sticky="nesw")
-        button2 = Button(text=posities[1], command=lambda: player_positie(1)).grid(row=5, column=1, sticky="nesw")
-        button3 = Button(text=posities[2], command=lambda: player_positie(2)).grid(row=5, column=2, sticky="nesw")
-        button4 = Button(text=posities[3], command=lambda: player_positie(3)).grid(row=6, column=0, sticky="nesw")
-        button5 = Button(text=posities[4], command=lambda: player_positie(4)).grid(row=6, column=1, sticky="nesw")
-        button6 = Button(text=posities[5], command=lambda: player_positie(5)).grid(row=6, column=2, sticky="nesw")
-        button7 = Button(text=posities[6], command=lambda: player_positie(6)).grid(row=7, column=0, sticky="nesw")
-        button8 = Button(text=posities[7], command=lambda: player_positie(7)).grid(row=7, column=1, sticky="nesw")
-        button9 = Button(text=posities[8], command=lambda: player_positie(8)).grid(row=7, column=2, sticky="nesw")
+        button1 = Button(text=posities[0], command=lambda: Turn_board.player_positie(0)).grid(row=5, column=0, sticky="nesw")
+        button2 = Button(text=posities[1], command=lambda: Turn_board.player_positie(1)).grid(row=5, column=1, sticky="nesw")
+        button3 = Button(text=posities[2], command=lambda: Turn_board.player_positie(2)).grid(row=5, column=2, sticky="nesw")
+        button4 = Button(text=posities[3], command=lambda: Turn_board.player_positie(3)).grid(row=6, column=0, sticky="nesw")
+        button5 = Button(text=posities[4], command=lambda: Turn_board.player_positie(4)).grid(row=6, column=1, sticky="nesw")
+        button6 = Button(text=posities[5], command=lambda: Turn_board.player_positie(5)).grid(row=6, column=2, sticky="nesw")
+        button7 = Button(text=posities[6], command=lambda: Turn_board.player_positie(6)).grid(row=7, column=0, sticky="nesw")
+        button8 = Button(text=posities[7], command=lambda: Turn_board.player_positie(7)).grid(row=7, column=1, sticky="nesw")
+        button9 = Button(text=posities[8], command=lambda: Turn_board.player_positie(8)).grid(row=7, column=2, sticky="nesw")
 
 
         Label(root, text=" ").grid(row=8, column=0, columnspan=3)
