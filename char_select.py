@@ -1,3 +1,8 @@
+from tkinter import Button
+from tkinter import Label
+from tkinter import Tk
+from board import draw_board
+root = Tk()
 # player char is leeg zodat deze later gevuld kan worden
 player_char = ""
 

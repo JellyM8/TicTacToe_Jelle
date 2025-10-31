@@ -1,4 +1,5 @@
 # variabelen aanmaken zodat we een turn cycle kunnen maken
+print("hit")
 turn = 1
 turns = 0
 
