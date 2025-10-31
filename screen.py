@@ -1,3 +1,10 @@
+from tkinter import Tk
+from tkinter import Label
+from tkinter import Button
+import os
+from char_select import x_select, o_select
+root = Tk()
+
 # button functies op het scherm
 main_label = Label(root, text="Welcome to Tic Tac Toe!")  # Welkom scherm
 player_select_label = Label(text="Select a player to play as")  # Kies een speler
