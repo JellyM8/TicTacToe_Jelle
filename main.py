@@ -1,20 +1,14 @@
-# importing van tkinter
+# main.py
+# ---------------------
+# Startpunt van het programma. Maakt één Tk() venster aan en laadt het hoofdscherm.
 from tkinter import Tk
-from char_select import Char_select
-from gamestate import Gamestate
 from screen import Mainscreen_en_widgets
-from turn_board import Turn_board
-root = Tk()
 
-# bovenstaande werkte niet dus probeerde daarna alle aangemaakte functies op te roepen
-Mainscreen_en_widgets.restart()
-Mainscreen_en_widgets.quit()
-Char_select.x_select()
-Char_select.o_select()
-Turn_board.draw_board()
-Gamestate.Check_game_over()
-Turn_board.player_positie()
-Turn_board.Ai_turn()
+def main():
+    root = Tk()
+    root.title("Tic Tac Toe")
+    app = Mainscreen_en_widgets(root)
+    root.mainloop()
 
-
-root.mainloop()
+if __name__ == "__main__":
+    main()
