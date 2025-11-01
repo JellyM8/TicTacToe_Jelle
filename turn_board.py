@@ -81,7 +81,7 @@ class Turn_board:
                 break
 
     def draw_board(self,root):
-        print("⚠️ draw_board CALLED ⚠️")
+
 
         self.buttons = [None] * 9 # om de buttons zelf neer te zetten
         self.posities = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
