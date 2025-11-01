@@ -41,8 +41,14 @@ class Turn_board:
             if not self.game_over and self.turns < 9:
                 self.Ai_turn(root)
                 
-        #error handeling voor als er al gekozen locatie werd gekozen 
+        #error handeling voor als er al gekozen locatie werd gekozen
+
+
         else:
+            # Verwijder oude foutlabels op rij 8
+            for widget in root.grid_slaves(row=8):
+                widget.destroy()
+            # de foutmeldin zelf 
             Label(root, text="You have selected an already chosen location!", fg="red").grid(row=8, column=0, columnspan=3)
 
 
