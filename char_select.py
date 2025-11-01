@@ -15,12 +15,12 @@ class Char_select:
         Label(self.root, text=f"You are X").grid(row=3, column=0, columnspan=3)
         Button(self.root, text="Start Game", command=self.start_game).grid(row=4, column=0, columnspan=3)
 
-    def o_select(self):
-        n.player_char = "O"
-        n.ai_char = "X"
-        Label(self.root, text=f"You are O").grid(row=3, column=0, columnspan=3)
-        Button(self.root, text="Start Game", command=self.start_game).grid(row=4, column=0, columnspan=3)
 
-    def start_game(self):
-        board = Turn_board()
-        board.draw_board(self.root)
+    # functie om player o aan te maken
+    def o_select():
+        global player_char
+        global ai_char
+        player_char = "O"
+        ai_char = "X"
+        player_label = Label(root, text=f"You have selected {player_char}").grid(row=3, column=0, columnspan=3)
+        start_button = Button(root, text="Start the game", command=Turn_board.draw_board).grid(row=4, column=0, columnspan=3)
