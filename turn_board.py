@@ -2,7 +2,7 @@ from tkinter import Button
 from tkinter import Label
 from tkinter import Tk
 from char_select import player_char, ai_char
-from gamestate import Check_game_over
+from gamestate import Gamestate
 from random import randint
 # variabelen aanmaken zodat we een turn cycle kunnen maken
 root = Tk()
@@ -32,7 +32,7 @@ class Turn_board:
             if posities[positie] == "-":
                 posities[positie] = player_char
                 new_button = Button(root, text=posities[positie]).grid(row=r, column=c, sticky="nesw")
-                game_over = Check_game_over(posities)
+                game_over = Gamestate.Check_game_over(posities)
                 turn = 0
                 turns += 1
                 print(posities)
@@ -59,7 +59,7 @@ class Turn_board:
                 else:
                     c = 2
                 new_button = Button(root, text=posities[ai_select]).grid(row=r, column=c, sticky="nesw")
-                game_over = Check_game_over(posities)
+                game_over = Gamestate.Check_game_over(posities)
                 turn = 1
                 turns += 1
                 print(posities)
@@ -117,7 +117,7 @@ class Turn_board:
     #             posities[positie] = ai_select
     #             player_char = ai_select
     #             new_button =Button(root, text=posities[positie]).grid(row=r, column =c, sticky="nesw")
-    #             game_over = Check_game_over(posities)
+    #             game_over = Gamestate.Check_game_over(posities)
     #             turn = 1
     #             turns += 1
     #             print(posities)
