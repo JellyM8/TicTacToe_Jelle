@@ -40,6 +40,11 @@ class Turn_board:
             self.turns += 1
             if not self.game_over and self.turns < 9:
                 self.Ai_turn(root)
+                
+        #error handeling voor als er al gekozen locatie werd gekozen 
+        else:
+            Label(root, text="You have selected an already chosen location!", fg="red").grid(row=8, column=0, columnspan=3)
+
 
     def Ai_turn(self, root):
         while True:
@@ -94,3 +99,7 @@ class Turn_board:
         Button(root, text="Restart", command=lambda: self.draw_board(root)).grid(row=9, column=0, columnspan=3)
 
         Label(root, text=" ").grid(row=8, column=0, columnspan=3)
+
+
+                       
+
