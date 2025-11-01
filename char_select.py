@@ -4,7 +4,7 @@ from tkinter import Tk
 from turn_board import Turn_board
 root = Tk()
 # player char is leeg zodat deze later gevuld kan worden
-player_char = ""
+
 
 class Char_select:
     # functie om player x caan te maken
