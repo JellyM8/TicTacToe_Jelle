@@ -79,7 +79,7 @@ class Turn_board:
         for c in range(3):
             root.columnconfigure(c, weight=1)
 
-        # ✅ Hier gebruiken we jouw originele knoppenaanmaak (niet met for-loop)
+        # ✅ Hier gebruiken we jouw originele knoppenaanmaak (niet met for-loop) (lamba wacht een button press af, zonder lambda zou die meteen uitgevoerd worden)
         Button(root, text=self.posities[0], command=lambda: self.player_positie(0, root)).grid(row=5, column=0, sticky="nesw")
         Button(root, text=self.posities[1], command=lambda: self.player_positie(1, root)).grid(row=5, column=1, sticky="nesw")
         Button(root, text=self.posities[2], command=lambda: self.player_positie(2, root)).grid(row=5, column=2, sticky="nesw")
