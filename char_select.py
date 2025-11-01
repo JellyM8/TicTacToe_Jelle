@@ -1,14 +1,26 @@
-# main.py
+# char_select.py
 # ---------------------
-# Startpunt van het programma. Maakt één Tk() venster aan en laadt het hoofdscherm.
-from tkinter import Tk
-from screen import Mainscreen_en_widgets
+# Laat de speler kiezen tussen X of O, en start daarna het bord.
+from tkinter import Button, Label
+import neutral_importfile as n
+from turn_board import Turn_board
 
-root = Tk()
-root.title("Tic Tac Toe")
+class Char_select:
+    def __init__(self, root):
+        self.root = root
 
-# Maak hoofdscherm
-Mainscreen_en_widgets(root)
+    def x_select(self):
+        n.player_char = "X"
+        n.ai_char = "O"
+        Label(self.root, text=f"You are X").grid(row=3, column=0, columnspan=3)
+        Button(self.root, text="Start Game", command=self.start_game).grid(row=4, column=0, columnspan=3)
 
-# Start mainloop
-root.mainloop()
+    def o_select(self):
+        n.player_char = "O"
+        n.ai_char = "X"
+        Label(self.root, text=f"You are O").grid(row=3, column=0, columnspan=3)
+        Button(self.root, text="Start Game", command=self.start_game).grid(row=4, column=0, columnspan=3)
+
+    def start_game(self):
+        board = Turn_board()
+        board.draw_board(self.root)
