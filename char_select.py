@@ -13,10 +13,14 @@ class Char_select:
         n.player_char = "X"
         n.ai_char = "O"
         Label(self.root, text="You are X").grid(row=3, column=0, columnspan=3)
-        Button(self.root, text="Start Game", command=Turn_board.draw_board).grid(row=4, column=0, columnspan=3)
+        Button(self.root, text="Start Game", command=self.start_game).grid(row=4, column=0, columnspan=3)
 
     def o_select(self):
         n.player_char = "O"
         n.ai_char = "X"
         Label(self.root, text="You are O").grid(row=3, column=0, columnspan=3)
-        Button(self.root, text="Start Game", command=Turn_board.draw_board).grid(row=4, column=0, columnspan=3)
+        Button(self.root, text="Start Game", command=self.start_game).grid(row=4, column=0, columnspan=3)
+
+    def start_game(self):
+        board = Turn_board()
+        board.draw_board(self.root)
