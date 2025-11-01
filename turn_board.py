@@ -66,11 +66,18 @@ class Turn_board:
                 self.turns += 1
                 break
 
-    def draw_board(self, root):
+    def draw_board(self,root):
+        
         self.posities = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
         self.turn = 1
         self.turns = 0
         self.game_over = False
+        
+            # 🔹 Voeg dit toe om sticky te laten werken
+        for r in range(5, 8):
+            root.rowconfigure(r, weight=1)
+        for c in range(3):
+            root.columnconfigure(c, weight=1)
 
         # ✅ Hier gebruiken we jouw originele knoppenaanmaak (niet met for-loop)
         Button(root, text=self.posities[0], command=lambda: self.player_positie(0, root)).grid(row=5, column=0, sticky="nesw")
@@ -82,5 +89,8 @@ class Turn_board:
         Button(root, text=self.posities[6], command=lambda: self.player_positie(6, root)).grid(row=7, column=0, sticky="nesw")
         Button(root, text=self.posities[7], command=lambda: self.player_positie(7, root)).grid(row=7, column=1, sticky="nesw")
         Button(root, text=self.posities[8], command=lambda: self.player_positie(8, root)).grid(row=7, column=2, sticky="nesw")
+        
+        # restart button nog toegevoegd
+        Button(root, text="Restart", command=lambda: self.draw_board(root)).grid(row=9, column=0, columnspan=3)
 
         Label(root, text=" ").grid(row=8, column=0, columnspan=3)
