@@ -2,15 +2,15 @@ from tkinter import Tk
 from tkinter import Label
 from tkinter import Button
 import os
-from char_select import x_select, o_select
+from char_select import Char_select
 root = Tk()
 
 class Mainscreen_en_widgets:
     # button functies op het scherm
     main_label = Label(root, text="Welcome to Tic Tac Toe!")  # Welkom scherm
     player_select_label = Label(text="Select a player to play as")  # Kies een speler
-    x_button = Button(root, text="player X", command=x_select)  # button om X te zijn
-    o_button = Button(root, text="player O", command=o_select)  # button om O te zijn
+    x_button = Button(root, text="player X", command=Char_select.x_select)  # button om X te zijn
+    o_button = Button(root, text="player O", command=Char_select.o_select)  # button om O te zijn
 
 
 
