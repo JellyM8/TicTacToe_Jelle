@@ -5,3 +5,5 @@
 
 player_char = None
 ai_char = None
+
+# code linting gedaan heb deze lijn toegevoegd zodat ik kan pushen
